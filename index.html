@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple M3U Web Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="player-container">
+        <h1>M3U Web Player</h1>
+
+        <div class="input-section">
+            <label for="m3uUrl">Enter M3U URL:</label>
+            <input type="text" id="m3uUrl" placeholder="e.g., http://example.com/playlist.m3u">
+            <button id="loadUrlBtn">Load M3U from URL</button>
+        </div>
+
+        <div class="input-section">
+            <label for="m3uContent">Or paste M3U Content:</label>
+            <textarea id="m3uContent" rows="5" placeholder="#EXTM3U
+#EXTINF:-1,Artist - Song Title 1
+http://example.com/audio/song1.mp3
+#EXTINF:-1,Artist - Song Title 2
+/audio/song2.mp3"></textarea>
+            <button id="loadContentBtn">Load M3U from Content</button>
+        </div>
+
+        <div class="controls">
+            <button id="prevBtn">&laquo; Previous</button>
+            <button id="playPauseBtn">Play</button>
+            <button id="stopBtn">Stop</button>
+            <button id="nextBtn">Next &raquo;</button>
+        </div>
+
+        <div class="current-track">
+            <p>Now Playing: <span id="currentTrackTitle">No track loaded</span></p>
+        </div>
+
+        <audio id="audioPlayer" controls></audio>
+
+        <div class="playlist-section">
+            <h2>Playlist</h2>
+            <ul id="playlist">
+                <li>No playlist loaded</li>
+            </ul>
+        </div>
+
+        <p class="note">Note: This player works with M3U files where audio files are accessible via HTTP (web server).</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
