@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for better scrolling on small screens */
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 20px;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.player-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.input-section {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-section input[type="text"],
+.input-section textarea {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.input-section button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+.input-section button:hover {
+    background-color: #0056b3;
+}
+
+.controls {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.controls button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px; /* Pill shape */
+    cursor: pointer;
+    font-size: 1.1em;
+    min-width: 100px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.controls button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.controls button#stopBtn {
+    background-color: #dc3545;
+}
+
+.controls button#stopBtn:hover {
+    background-color: #c82333;
+}
+
+.current-track {
+    margin-bottom: 25px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#audioPlayer {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    outline: none; /* Remove default focus outline */
+}
+
+.playlist-section {
+    margin-top: 30px;
+    text-align: left;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.playlist-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#playlist {
+    list-style-type: none;
+    padding: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#playlist li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#playlist li:last-child {
+    border-bottom: none;
+}
+
+#playlist li:hover {
+    background-color: #e9e9e9;
+}
+
+#playlist li.active {
+    background-color: #d1ecf1;
+    font-weight: bold;
+    color: #007bff;
+}
+
+#playlist li.active::before {
+    content: "▶ ";
+    margin-right: 5px;
+    color: #007bff;
+}
+
+.note {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .player-container {
+        padding: 20px;
+        margin: 10px;
+    }
+    .controls {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .controls button {
+        flex-grow: 1; /* Allow buttons to grow and fill space */
+        min-width: unset; /* Remove min-width for smaller screens */
+    }
+}
